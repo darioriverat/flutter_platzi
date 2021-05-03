@@ -32,7 +32,7 @@ class DescriptionPlace extends StatelessWidget {
             margin: EdgeInsets.only(right: 10),
               child: Text(
             namePlace,
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900, fontFamily: 'Righteous'),
             textAlign: TextAlign.left,
           )),
           Row(
@@ -45,7 +45,7 @@ class DescriptionPlace extends StatelessWidget {
             this.descriptionDummy,
             style: TextStyle(
                 fontSize: 16,
-                fontWeight: FontWeight.bold,
+                fontFamily: 'Righteous',
                 color: Color(0xFF56575a)),
           ),
         )
