@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'button_purple.dart';
 
 class DescriptionPlace extends StatelessWidget {
   @override
@@ -48,7 +49,8 @@ class DescriptionPlace extends StatelessWidget {
                 fontFamily: 'Righteous',
                 color: Color(0xFF56575a)),
           ),
-        )
+        ),
+        ButtonPurple('Navigate'),
       ],
     );
 
