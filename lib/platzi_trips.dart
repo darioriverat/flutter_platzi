@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:platzi_reto/profile_trips.dart';
 import 'package:platzi_reto/search_trips.dart';
@@ -10,29 +11,11 @@ class PlatziTrips extends StatefulWidget {
 
 class _PlatziTripsState extends State<PlatziTrips> {
 
-  int indexTap = 0;
-
-  final List<Widget> widgetsChildren = [
-    HomeTrips(),
-    SearchTrips(),
-    ProfileTrips(),
-  ];
-
-  void onTapTapped(int index) {
-    setState(() {
-      indexTap = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: Theme(
-          data: Theme.of(context)
-              .copyWith(canvasColor: Colors.white, primaryColor: Colors.purple),
-          child: BottomNavigationBar(
-            currentIndex: indexTap,
-            onTap: onTapTapped,
+        bottomNavigationBar: CupertinoTabScaffold(
+          tabBar: CupertinoTabBar(
             items: [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
@@ -47,8 +30,27 @@ class _PlatziTripsState extends State<PlatziTrips> {
                 title: Text(''),
               ),
             ],
-          ),
+          ), tabBuilder: (BuildContext context, int index) {
+            switch (index) {
+              case 0:
+                return CupertinoTabView(
+                  builder: (BuildContext context) => HomeTrips(),
+                );
+              case 1:
+                return CupertinoTabView(
+                  builder: (BuildContext context) => SearchTrips(),
+                );
+              case 2:
+                return CupertinoTabView(
+                  builder: (BuildContext context) => ProfileTrips(),
+                );
+              default:
+                return CupertinoTabView(
+                  builder: (BuildContext context) => HomeTrips(),
+                );
+            }
+          },
         ),
-        body: widgetsChildren[indexTap]);
+      );
   }
 }
