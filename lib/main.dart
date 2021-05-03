@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_reto/button_purple.dart';
 import 'package:platzi_reto/description_place.dart';
-import 'package:platzi_reto/gradient_back.dart';
 import 'package:platzi_reto/header.dart';
-import 'package:platzi_reto/review.dart';
 import 'package:platzi_reto/review_list.dart';
 
 void main() {
